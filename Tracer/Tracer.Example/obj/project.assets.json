@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Tracer.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Tracer.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tracer.Core.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Tracer.Core/1.0.0": {
+      "type": "project",
+      "path": "../Tracer.Core/Tracer.Core.csproj",
+      "msbuildProject": "../Tracer.Core/Tracer.Core.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Tracer.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Home\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\mywork\\SPP\\Tracer\\Tracer.Core\\Tracer.Core.csproj": {
+              "projectPath": "C:\\mywork\\SPP\\Tracer\\Tracer.Core\\Tracer.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
