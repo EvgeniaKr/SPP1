@@ -17,9 +17,9 @@ namespace Tracer.Core
         
         public List<ThreadMethods> TThreadMethods { get; } //содержит список вложенных в него методов
 
-        public ThreadMethods(double time, string className, string methodName)
+        public ThreadMethods(string className, string methodName)
         {
-            Time = time;
+            Time = 0;
             Class = className;
             Method = methodName;
             TThreadMethods = new List<ThreadMethods>();
