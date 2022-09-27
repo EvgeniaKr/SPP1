@@ -15,7 +15,7 @@ namespace Tracer.Core
         private TraceResult result { get; }
         private Stopwatch stopWatch;
         private Dictionary<int, Tread> Treads { get; }
-
+        object locker = new();
         public TracerRealize()
         {
             result = new TraceResult();
@@ -34,33 +34,39 @@ namespace Tracer.Core
 
         public void StartTrace()
         {
-            var threadId = Thread.CurrentThread.ManagedThreadId; //get id of thread
-            Tread threadTracer;
-            //check if the thread is already in dictionary 
-            if (Treads.ContainsKey(threadId)) //ищет есть ли в списке есть обьект класса ThreadTracers соотв опр потоку 
+            lock (locker)
             {
-                threadTracer = Treads[threadId];
-            }
-            else// если нет создаёт
-            {
-                threadTracer = new Tread(threadId);
-                Treads.Add(threadId, threadTracer);
-            }
+                var threadId = Thread.CurrentThread.ManagedThreadId; //get id of thread
+                Tread threadTracer;
+                //check if the thread is already in dictionary 
+                if (Treads.ContainsKey(threadId)) //ищет есть ли в списке есть обьект класса ThreadTracers соотв опр потоку 
+                {
+                    threadTracer = Treads[threadId];
+                }
+                else// если нет создаёт
+                {
+                    threadTracer = new Tread(threadId);
+                    Treads.Add(threadId, threadTracer);
+                }
 
-            threadTracer.StartTrace();
+                threadTracer.StartTrace();
+            }
         }
 
         public void StopTrace()
         {
-            var threadId = Thread.CurrentThread.ManagedThreadId;
-            if (Treads.ContainsKey(threadId))
+            lock (locker)
             {
-                Tread threadTracer = Treads[threadId];
-                threadTracer.StopTrace();
-            }
-            else
-            {
-                throw new InvalidOperationException();
+                var threadId = Thread.CurrentThread.ManagedThreadId;
+                if (Treads.ContainsKey(threadId))
+                {
+                    Tread threadTracer = Treads[threadId];
+                    threadTracer.StopTrace();
+                }
+                else
+                {
+                    throw new InvalidOperationException();
+                }
             }
         }
     }
