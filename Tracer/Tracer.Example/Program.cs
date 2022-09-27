@@ -8,18 +8,12 @@ namespace Tracer.Example
         private static ITracer tracer = new TracerRealize();
         static void Main(string[] args)
         {
-            TraceResult traceResult = new TraceResult();
-
-            Thread thread = new Thread(new ThreadStart(StartPr));
-            thread.Start();
-
+            
+            StartPr();
             Checkclassfirst.Checkmethodfirst(ref tracer);
             Checkclasssecond.Checkmethodsecond(ref tracer);
 
-            while (thread.IsAlive)
-            {
-
-            }
+          
 
         }
 
