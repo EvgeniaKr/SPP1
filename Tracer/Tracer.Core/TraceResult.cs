@@ -8,16 +8,16 @@ namespace Tracer.Core
 {
     public class TraceResult
     {
-        public List<Thread> Threads { get; }
+        public List<TracerThread> TTracerThread { get; }
 
         public TraceResult()
         {
-            Threads = new List<Thread>();
+            TTracerThread = new List<TracerThread>();
         }
 
-        public void AddThread(Thread thread)
+        public void AddThread(TracerThread thread)
         {
-            Threads.Add(thread);
+            TTracerThread.Add(thread);
         }        
     }
 }

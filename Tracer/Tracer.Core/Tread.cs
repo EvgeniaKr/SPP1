@@ -10,12 +10,13 @@ namespace Tracer.Core
 {
     public class Tread
     {
-        public TracerThread ThreadTraceResult { get; }
+        public TracerThread TTracerThread { get; }
+
         private Method cur;
 
         public Tread(int id)
         {
-            ThreadTraceResult = new TracerThread(id);
+            TTracerThread = new TracerThread(id);
             cur = null;
         }
         public void StartTrace()
@@ -42,7 +43,7 @@ namespace Tracer.Core
                 if (cur.IsActive() == false)
                 {
                     var methodTraceResult = cur.GetTraceResult();
-                    ThreadTraceResult.AddMethod(methodTraceResult);
+                    TTracerThread.AddMethod(methodTraceResult);
                     cur = null;
                 }
             }

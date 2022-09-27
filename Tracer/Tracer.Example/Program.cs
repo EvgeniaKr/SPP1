@@ -8,13 +8,19 @@ namespace Tracer.Example
         private static ITracer tracer = new TracerRealize();
         static void Main(string[] args)
         {
+            TraceResult traceResult = new TraceResult();
 
-            StartPr();
+            Thread thread = new Thread(new ThreadStart(StartPr));
+            thread.Start();
 
-            ThreadMethods tr = new ThreadMethods();
-            Console.WriteLine(tr.Class);
-            Console.WriteLine(tr.Method);
-            Console.WriteLine(tr.Time);
+            Checkclassfirst.Checkmethodfirst(ref tracer);
+            Checkclasssecond.Checkmethodsecond(ref tracer);
+
+            while (thread.IsAlive)
+            {
+
+            }
+
         }
 
         private static void StartPr()
@@ -22,6 +28,25 @@ namespace Tracer.Example
             tracer.StartTrace();
             Thread.Sleep(200);
             tracer.StopTrace();
+        }
+        public static class Checkclassfirst
+        {
+            public static void Checkmethodfirst(ref ITracer tracer)
+            {
+                tracer.StartTrace();
+                Thread.Sleep(200);
+                tracer.StopTrace();
+            }
+        }
+        public static class Checkclasssecond
+        {
+            public static void Checkmethodsecond(ref ITracer tracer)
+            {
+                tracer.StartTrace();
+                Checkclassfirst.Checkmethodfirst(ref tracer);
+                Thread.Sleep(200);
+                tracer.StopTrace();
+            }
         }
     }
 }
