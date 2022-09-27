@@ -27,7 +27,7 @@ namespace Tracer.Core
 
             }
         }
-        public List<ThreadMethods> Methods { get; }
+        public List<ThreadMethods>? Methods { get; }
 
 
         public TracerThread()

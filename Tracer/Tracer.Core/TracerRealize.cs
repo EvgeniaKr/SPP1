@@ -13,12 +13,14 @@ namespace Tracer.Core
     {
         private TraceResult result { get; }
         private Stopwatch stopWatch;
+        private Dictionary<int, Tread> Treads { get; }
 
         private ThreadMethods res;
         ThreadMethods InnerMethod;
         public TracerRealize()
         {
-            
+            result = new TraceResult();
+            Treads = new Dictionary<int, Tread>();
         }
         public TraceResult GetTraceResult()
         {
@@ -37,7 +39,7 @@ namespace Tracer.Core
         public void StopTrace()
         {
             
-            var time = stopWatch.Elapsed.TotalMilliseconds;
+           // var time = stopWatch.Elapsed.TotalMilliseconds;
         }
     }
     

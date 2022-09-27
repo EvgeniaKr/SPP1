@@ -8,10 +8,13 @@ namespace Tracer.Example
         private static ITracer tracer = new TracerRealize();
         static void Main(string[] args)
         {
+
             StartPr();
 
-
-            Console.WriteLine();
+            ThreadMethods tr = new ThreadMethods();
+            Console.WriteLine(tr.Class);
+            Console.WriteLine(tr.Method);
+            Console.WriteLine(tr.Time);
         }
 
         private static void StartPr()
