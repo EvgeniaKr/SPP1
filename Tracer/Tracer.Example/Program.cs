@@ -27,6 +27,8 @@ namespace Tracer.Example
 
           
             XmlSerilaization(res);
+            JsonSerilaization(res);
+
 
             Console.WriteLine();
 
@@ -65,6 +67,15 @@ namespace Tracer.Example
             MethodInfo myMethod = null;
             object obj = Tracer.Core.TSerialization.getAddon("Tracer.Serialization.Xml", "Serialize", ref myMethod);
             using (FileStream fs = new FileStream("methods.xml", FileMode.Create))
+            {
+                myMethod.Invoke(obj, new object[] { res, fs });
+            }
+        }
+        private static void JsonSerilaization(TraceResult res)
+        {
+            MethodInfo myMethod = null;
+            object obj = Tracer.Core.TSerialization.getAddon("Tracer.Serialization.Json", "Serialize", ref myMethod);
+            using (FileStream fs = new FileStream("methods.json", FileMode.Create))
             {
                 myMethod.Invoke(obj, new object[] { res, fs });
             }

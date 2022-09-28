@@ -13,6 +13,7 @@ namespace Tracer.Core
     public class TracerThread
     {
         [XmlAttribute]
+        [JsonPropertyName("Id")]
        
         public int TId { get; set; }//идентификатор потока
         [XmlAttribute]

@@ -12,6 +12,7 @@ namespace Tracer.Core
     public class TraceResult
     {
         [XmlElement("thread")]
+        [JsonPropertyName("thread")]
     
         public List<TracerThread> TTracerThread { get; }
 

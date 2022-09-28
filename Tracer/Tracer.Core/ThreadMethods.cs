@@ -18,7 +18,7 @@ namespace Tracer.Core
         [XmlAttribute]
         public double Time { get; set; }
         [XmlElement("method")]
-        
+        [JsonPropertyName("method")]
 
         public List<ThreadMethods> TThreadMethods { get; } //содержит список вложенных в него методов
 
