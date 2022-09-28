@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Tracer.Core
 {
+    [Serializable]
     public class TraceResult
     {
+        [XmlElement("thread")]
+    
         public List<TracerThread> TTracerThread { get; }
 
         public TraceResult()
@@ -18,6 +23,7 @@ namespace Tracer.Core
         public void AddThread(TracerThread thread)
         {
             TTracerThread.Add(thread);
-        }        
+        }    
+        
     }
 }

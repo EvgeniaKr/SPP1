@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracer.Core", "Tracer.Core\Tracer.Core.csproj", "{6619D1AB-74CB-4C39-A911-2C00C8F620BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tracer.Core", "Tracer.Core\Tracer.Core.csproj", "{6619D1AB-74CB-4C39-A911-2C00C8F620BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracer.Example", "Tracer.Example\Tracer.Example.csproj", "{8B417455-180C-4559-A496-3D86AAFD01FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tracer.Example", "Tracer.Example\Tracer.Example.csproj", "{8B417455-180C-4559-A496-3D86AAFD01FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracer.Serialization.Abstractions", "Tracer.Serialization.Abstractions\Tracer.Serialization.Abstractions.csproj", "{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8B417455-180C-4559-A496-3D86AAFD01FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B417455-180C-4559-A496-3D86AAFD01FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B417455-180C-4559-A496-3D86AAFD01FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

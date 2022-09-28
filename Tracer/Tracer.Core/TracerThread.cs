@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Tracer.Core
 {
+    [Serializable]
     public class TracerThread
     {
+        [XmlAttribute]
+       
         public int TId { get; set; }//идентификатор потока
-
+        [XmlAttribute]
         public double Time//время исполнения потока
         {
             get
@@ -27,6 +32,7 @@ namespace Tracer.Core
 
             }
         }
+        [XmlElement("method")]
         public List<ThreadMethods>? Methods { get; }
 
 

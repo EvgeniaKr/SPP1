@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Tracer.Core;
+using Tracer.Serialization.Abstractions;
 
 namespace Tracer.Example
 {
@@ -16,9 +17,17 @@ namespace Tracer.Example
             Checkclassfirst.Checkmethodfirst(ref tracer);
             Checkclasssecond.Checkmethodsecond(ref tracer);
 
-            
 
-             var res = tracer.GetTraceResult();
+            while (thread.IsAlive)
+            {
+
+            }
+
+            var res = tracer.GetTraceResult();
+
+          
+            XmlSerilaization(res);
+
             Console.WriteLine();
 
         }
@@ -48,5 +57,18 @@ namespace Tracer.Example
                 tracer.StopTrace();
             }
         }
+
+        
+
+        private static void XmlSerilaization(TraceResult res)
+        {
+            MethodInfo myMethod = null;
+            object obj = Tracer.Core.TSerialization.getAddon("Tracer.Serialization.Xml", "Serialize", ref myMethod);
+            using (FileStream fs = new FileStream("methods.xml", FileMode.Create))
+            {
+                myMethod.Invoke(obj, new object[] { res, fs });
+            }
+        }
+
     }
 }
