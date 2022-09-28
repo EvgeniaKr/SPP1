@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zsi2DjeC3bstajqxswKE51nFGHYOkWgAmLa28+VTsZCQBIaAos0vxVqlh/7rAPaY7ydHFpYs8uaXpWDEDU9SrQ==",
+  "dgSpecHash": "Jb0o0zZis9BQFBufbSIn7g5Nn0uOKC0LyRNDtBAerzvRq/tfdA8/rk6c9UzQTdwDbAWzjzxLTDZIu//D6a1myA==",
   "success": true,
   "projectFilePath": "C:\\mywork\\SPP\\Tracer\\Tracer.Serialization.Abstractions\\Tracer.Serialization.Abstractions.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Home\\.nuget\\packages\\yamldotnet\\12.0.1\\yamldotnet.12.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

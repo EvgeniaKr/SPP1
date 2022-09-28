@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Y5VMKbXJAS/1xFq589F8pc9Qow0V6ERrNl5RyRyOdgfBaUVETqM6AEnl91L97nJNn8wfxiaryDgniaOytGaKDA==",
+  "dgSpecHash": "xash4DtNTTM5EeGXUo6caPHQ/mujmC6QBEUqkuYgfbNsyDvSmreiqhVMb1tUf/fTjsUdklDR9RHEcQ6zS8GRdg==",
   "success": true,
   "projectFilePath": "C:\\mywork\\SPP\\Tracer.Serialization\\Tracer.Serialization\\Tracer.Serialization.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Home\\.nuget\\packages\\yamldotnet\\12.0.1\\yamldotnet.12.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

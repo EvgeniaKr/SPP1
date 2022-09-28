@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "2xBNTFnVVcwGlU82+6xGRwHm6UHHOFOn6aOKw28mokaZslRklTq/KvscbhhP3sdBx4RLQAUma6a3cmwva7WIGw==",
+  "dgSpecHash": "UiNUs0p6RUme4IxsR25F2P5S3I67ajYZR0CrN3PjucZ+/8gK2+JlHHFjBsZMMhCASP7MJYvDC9o+JmBhjbqeAg==",
   "success": true,
   "projectFilePath": "C:\\mywork\\SPP\\Tracer\\Tracer.Core\\Tracer.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Home\\.nuget\\packages\\yamldotnet\\12.0.1\\yamldotnet.12.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

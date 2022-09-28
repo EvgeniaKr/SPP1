@@ -14,7 +14,8 @@ namespace Tracer.Core
     {
         [XmlAttribute]
         [JsonPropertyName("Id")]
-       
+
+        [YamlDotNet.Serialization.YamlMember(Alias = "Id")]
         public int TId { get; set; }//идентификатор потока
         [XmlAttribute]
         public double Time//время исполнения потока

@@ -19,6 +19,8 @@ namespace Tracer.Core
         public double Time { get; set; }
         [XmlElement("method")]
         [JsonPropertyName("method")]
+        [YamlDotNet.Serialization.YamlMember(Alias = "method")]
+
 
         public List<ThreadMethods> TThreadMethods { get; } //содержит список вложенных в него методов
 
