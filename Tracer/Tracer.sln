@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tracer.Core", "Tracer.Core\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tracer.Example", "Tracer.Example\Tracer.Example.csproj", "{8B417455-180C-4559-A496-3D86AAFD01FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracer.Serialization.Abstractions", "Tracer.Serialization.Abstractions\Tracer.Serialization.Abstractions.csproj", "{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tracer.Serialization.Abstractions", "Tracer.Serialization.Abstractions\Tracer.Serialization.Abstractions.csproj", "{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracer.Core.Tests", "Tracer.Core.Tests\Tracer.Core.Tests.csproj", "{0EC8240F-1957-4027-90FD-26D302B6C23A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC6A30F2-5DED-430F-A698-D4D240B1C3F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC8240F-1957-4027-90FD-26D302B6C23A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC8240F-1957-4027-90FD-26D302B6C23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC8240F-1957-4027-90FD-26D302B6C23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC8240F-1957-4027-90FD-26D302B6C23A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

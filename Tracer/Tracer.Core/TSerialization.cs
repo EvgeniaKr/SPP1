@@ -10,23 +10,23 @@ namespace Tracer.Core
     public static class TSerialization
     {
         static string path = "..\\..\\..\\..\\..\\Tracer.Serialization\\Tracer.Serialization\\bin\\Debug\\net6.0\\Tracer.Serialization.dll";
-        public static object getAddon(string className, string methodName, ref MethodInfo methodInfo)
+        public static object getAddon(string Class, string Method, ref MethodInfo Inf)
         {
             // application domain.
-            Assembly a = Assembly.LoadFrom(path);
+            Assembly AssemblyLoadFrom = Assembly.LoadFrom(path);
 
-            var types = a.GetTypes();
+            var types = AssemblyLoadFrom.GetTypes();
 
             // Get the type to use.
-            Type myType = a.GetType(className);
+            Type TType = AssemblyLoadFrom.GetType(Class);
             // Get the method to call.
-            methodInfo = myType.GetMethod(methodName);
+            Inf = TType.GetMethod(Method);
 
             // Create an instance.
-            object obj = Activator.CreateInstance(myType);
+            object result = Activator.CreateInstance(TType);
             // Execute the method.
 
-            return obj;
+            return result;
         }
     }
 }

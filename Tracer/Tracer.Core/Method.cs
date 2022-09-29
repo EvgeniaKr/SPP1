@@ -9,41 +9,41 @@ namespace Tracer.Core
 {
     public class Method
     {
-        private Stopwatch stopWatch;
+        private Stopwatch stop;
         private ThreadMethods result;
-        Method InnerMethod;
+        Method MMethod;
 
         //   private bool isNestedMethod = false;
 
         bool isActive; //contains value, that indicates whether an outer method is the previous method is active
-        public Stack<Method>? NestedMethod { get; }
+       
         public Method()
         {
-            stopWatch = new Stopwatch();
-            InnerMethod = null;
+            stop = new Stopwatch();
+            MMethod = null;
             bool isActive = false;
         }
         public ThreadMethods GetTraceResult()
         {
-            StackTrace stackTrace = new StackTrace();
+            StackTrace SStackTrace = new StackTrace();
             return result;
         }
 
-        public void StartTrace(string className, string methodName)
+        public void StartTrace(string Class, string Name)
         {
             if (isActive == false) //является ли метод вложенным: нет - true, да - false
             {
                 isActive = true; //make a method an outer method for someone
-                stopWatch.Start();
-                result = new ThreadMethods(className, methodName);
+                stop.Start();
+                result = new ThreadMethods(Class, Name);
             }
             else
             {
-                if (InnerMethod == null)
+                if (MMethod == null)
                 {
-                    InnerMethod = new Method();
+                    MMethod = new Method();
                 }
-                InnerMethod.StartTrace(className, methodName);
+                MMethod.StartTrace(Class, Name);
             }
         }
 
@@ -51,20 +51,20 @@ namespace Tracer.Core
         {
             if (isActive == true)
             {
-                if (InnerMethod != null) // если вложенный метод есть
+                if (MMethod != null) // если вложенный метод есть
                 {
-                    InnerMethod.StopTrace();
-                    if (InnerMethod.IsActive() == false)
+                    MMethod.StopTrace();
+                    if (MMethod.IsActive() == false)
                     {
-                        var innerMethodTraceResult = InnerMethod.GetTraceResult();
-                        InnerMethod = null;
-                        result.AddThreadMethods(innerMethodTraceResult);
+                        var MethodGetTraceResult = MMethod.GetTraceResult();
+                        MMethod = null;
+                        result.AddThreadMethods(MethodGetTraceResult);
                     }
                 }
                 else
                 {
-                    stopWatch.Stop();
-                    result.Time = getTime();
+                    stop.Stop();
+                    result.Time = stop.Elapsed.TotalMilliseconds;
                     isActive = false;
                 }
             }
@@ -77,12 +77,6 @@ namespace Tracer.Core
         public bool IsActive()
         {
             return isActive;
-        }
-
-        private double getTime()
-        {
-            var time = stopWatch.Elapsed.TotalMilliseconds;
-            return time;
-        }
+        }        
     }
 }

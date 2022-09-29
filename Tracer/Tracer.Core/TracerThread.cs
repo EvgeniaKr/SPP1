@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,9 +24,9 @@ namespace Tracer.Core
             get
             {
                 double time = 0;
-                foreach (var methodTraceResult in Methods)
+                foreach (var m in Methods)
                 {
-                    time += methodTraceResult.Time;
+                    time += m.Time;
                 }
                 return time;
             }

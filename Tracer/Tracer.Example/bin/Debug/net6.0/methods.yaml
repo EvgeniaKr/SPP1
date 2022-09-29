@@ -1,23 +1,23 @@
 thread:
-- Id: 10
-  Time: 216.8291
+- Id: 9
+  Time: 211.8686
   Methods:
   - Class: Tracer.Example.Program
     Method: StartPr
-    Time: 216.8291
+    Time: 211.8686
     method: []
 - Id: 1
-  Time: 633.3847000000001
+  Time: 631.5872999999999
   Methods:
   - Class: Tracer.Example.Program+Checkclassfirst
     Method: Checkmethodfirst
-    Time: 214.1687
+    Time: 210.8739
     method: []
   - Class: Tracer.Example.Program+Checkclasssecond
     Method: Checkmethodsecond
-    Time: 419.216
+    Time: 420.7134
     method:
     - Class: Tracer.Example.Program+Checkclassfirst
       Method: Checkmethodfirst
-      Time: 216.1992
+      Time: 210.9097
       method: []

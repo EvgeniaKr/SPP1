@@ -21,10 +21,10 @@ namespace Tracer.Core
         }
         public void StartTrace()
         {
-            var stackTrace = new StackTrace();
-            var method = stackTrace.GetFrame(2).GetMethod(); //извлекается инф о методе
-            var methodName = method.Name;
-            var className = method.DeclaringType.FullName;
+            var SStackTrace = new StackTrace();
+            var m = SStackTrace.GetFrame(2).GetMethod(); //извлекается инф о методе
+            var Method = m.Name;
+            var Class = m.DeclaringType.FullName;
 
             //внутри потока должен имется всего один текущий метод
             if (cur == null)
@@ -32,7 +32,7 @@ namespace Tracer.Core
                 cur = new Method();
             }
 
-            cur.StartTrace(className, methodName);
+            cur.StartTrace(Class, Method);
         }
 
         public void StopTrace()
@@ -42,8 +42,8 @@ namespace Tracer.Core
                 cur.StopTrace();
                 if (cur.IsActive() == false)
                 {
-                    var methodTraceResult = cur.GetTraceResult();
-                    TTracerThread.AddMethod(methodTraceResult);
+                    var CurGetTraceResult = cur.GetTraceResult();
+                    TTracerThread.AddMethod(CurGetTraceResult);
                     cur = null;
                 }
             }

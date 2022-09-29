@@ -15,7 +15,7 @@ namespace Tracer.Core
         private TraceResult result { get; }
         private Stopwatch stopWatch;
         private Dictionary<int, Tread> Treads { get; }
-        object locker = new();
+        object stop = new();
         public TracerRealize()
         {
             result = new TraceResult();
@@ -34,33 +34,33 @@ namespace Tracer.Core
 
         public void StartTrace()
         {
-            lock (locker)
+            lock (stop)
             {
-                var threadId = Thread.CurrentThread.ManagedThreadId; //get id of thread
-                Tread threadTracer;
+                var TId = Thread.CurrentThread.ManagedThreadId; //get id of thread
+                Tread TTread;
                 //check if the thread is already in dictionary 
-                if (Treads.ContainsKey(threadId)) //ищет есть ли в списке есть обьект класса ThreadTracers соотв опр потоку 
+                if (Treads.ContainsKey(TId)) //ищет есть ли в списке есть обьект класса ThreadTracers соотв опр потоку 
                 {
-                    threadTracer = Treads[threadId];
+                    TTread = Treads[TId];
                 }
                 else// если нет создаёт
                 {
-                    threadTracer = new Tread(threadId);
-                    Treads.Add(threadId, threadTracer);
+                    TTread = new Tread(TId);
+                    Treads.Add(TId, TTread);
                 }
 
-                threadTracer.StartTrace();
+                TTread.StartTrace();
             }
         }
 
         public void StopTrace()
         {
-            lock (locker)
+            lock (stop)
             {
-                var threadId = Thread.CurrentThread.ManagedThreadId;
-                if (Treads.ContainsKey(threadId))
+                var TId = Thread.CurrentThread.ManagedThreadId;
+                if (Treads.ContainsKey(TId))
                 {
-                    Tread threadTracer = Treads[threadId];
+                    Tread threadTracer = Treads[TId];
                     threadTracer.StopTrace();
                 }
                 else
@@ -70,5 +70,5 @@ namespace Tracer.Core
             }
         }
     }
-    
+
 }

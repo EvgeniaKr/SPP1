@@ -26,7 +26,7 @@ namespace Tracer.Core
         public void AddThread(TracerThread thread)
         {
             TTracerThread.Add(thread);
-        }    
-        
+        }
+
     }
 }
