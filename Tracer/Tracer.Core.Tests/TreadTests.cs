@@ -11,10 +11,16 @@ namespace Tracer.Core.Tests
     [TestClass()]
     public class TreadTests
     {
+        Tread TTread;
+
         [TestMethod()]
         public void TreadTest()
         {
-            Assert.Fail();
+            TTread = new Tread(1);
+            TTread.StartTrace();
+            TTread.StopTrace();
+            var result = TTread.TTracerThread;
+            Assert.IsNotNull(result.Methods);
         }
     }
 }

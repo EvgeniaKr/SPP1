@@ -107,3 +107,5 @@ C:\mywork\SPP\Tracer\Tracer.Core.Tests\bin\Debug\net6.0\Tracer.Serialization.Abs
 C:\mywork\SPP\Tracer\Tracer.Core.Tests\bin\Debug\net6.0\Tracer.Core.pdb
 C:\mywork\SPP\Tracer\Tracer.Core.Tests\bin\Debug\net6.0\Tracer.Example.pdb
 C:\mywork\SPP\Tracer\Tracer.Core.Tests\bin\Debug\net6.0\Tracer.Serialization.Abstractions.pdb
+C:\mywork\SPP\Tracer\Tracer.Core.Tests\bin\Debug\net6.0\Tracer.Serialization.dll
+C:\mywork\SPP\Tracer\Tracer.Core.Tests\bin\Debug\net6.0\Tracer.Serialization.pdb

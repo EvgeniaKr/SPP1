@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Tracer.Core
 {
-    public class TracerRealize : ITracer
+    public class TracerRealize : ITracer // объект ITracer
     {
         private TraceResult result { get; }
         private Stopwatch stopWatch;
-        private Dictionary<int, Tread> Treads { get; }
+        private Dictionary<int, Tread> Treads { get; }// список потоков
         object stop = new();
         public TracerRealize()
         {
@@ -36,9 +36,9 @@ namespace Tracer.Core
         {
             lock (stop)
             {
-                var TId = Thread.CurrentThread.ManagedThreadId; //get id of thread
+                var TId = Thread.CurrentThread.ManagedThreadId; //
                 Tread TTread;
-                //check if the thread is already in dictionary 
+                
                 if (Treads.ContainsKey(TId)) //ищет есть ли в списке есть обьект класса ThreadTracers соотв опр потоку 
                 {
                     TTread = Treads[TId];
@@ -60,8 +60,8 @@ namespace Tracer.Core
                 var TId = Thread.CurrentThread.ManagedThreadId;
                 if (Treads.ContainsKey(TId))
                 {
-                    Tread threadTracer = Treads[TId];
-                    threadTracer.StopTrace();
+                    Tread TTread = Treads[TId];
+                    TTread.StopTrace();
                 }
                 else
                 {

@@ -13,8 +13,6 @@ namespace Tracer.Core
         private ThreadMethods result;
         Method MMethod;
 
-        //   private bool isNestedMethod = false;
-
         bool isActive; //contains value, that indicates whether an outer method is the previous method is active
        
         public Method()

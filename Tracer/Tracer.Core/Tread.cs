@@ -37,6 +37,7 @@ namespace Tracer.Core
 
         public void StopTrace()
         {
+            //внутри потока должен быть метод
             if (cur != null)
             {
                 cur.StopTrace();
